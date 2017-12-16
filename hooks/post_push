@@ -1,3 +1,4 @@
 #!/bin/bash
 docker tag $IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT
 docker push $DOCKER_REPO:$SOURCE_COMMIT
+curl -X POST https://cloud.docker.com/api/build/v1/source/05296a73-d602-4b79-92fc-1476998908c6/trigger/e5ee9a03-9d4e-4873-9050-591d81be159e/call/
