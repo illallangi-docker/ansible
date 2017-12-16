@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+    - group:
+        state: "present"
+        name:  "{{ ansible_env.GROUP | default(ansible_env.USER | default('docker')) }}"
+        gid:   "{{ ansible_env.GID | default(ansible_env.UID) }}"
+      when:
+        - ansible_env.UID is defined
+    - user:
+        state: "present"
+        user:  "{{ ansible_env.USER | default('docker') }}"
+        uid:   "{{ ansible_env.UID }}"
+        home:  "{{ ansible_env.USERHOME | default('/var/lib/' + (ansible_env.USER | default('docker'))) }}"
+        group: "{{ ansible_env.GROUP | default(ansible_env.USER | default('docker')) }}"
+      when:
+        - ansible_env.UID is defined
