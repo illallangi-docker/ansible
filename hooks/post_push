@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# SOURCE_COMMIT tag
 docker tag $IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT
 docker push $DOCKER_REPO:$SOURCE_COMMIT
+
+# illallangi-docker/bitcoin
 curl -X POST https://cloud.docker.com/api/build/v1/source/05296a73-d602-4b79-92fc-1476998908c6/trigger/e5ee9a03-9d4e-4873-9050-591d81be159e/call/
+
+# illallangi-docker/zcash
+curl -X POST https://cloud.docker.com/api/build/v1/source/048a6941-9d6f-43e4-91a9-f4b452279fd1/trigger/7d21e1e1-2ca0-4935-9f38-7d8313c5bba0/call/
