@@ -13,5 +13,6 @@
         uid:   "{{ ansible_env.UID }}"
         home:  "{{ ansible_env.USERHOME | default('/var/lib/' + (ansible_env.USER | default('docker'))) }}"
         group: "{{ ansible_env.GROUP | default(ansible_env.USER | default('docker')) }}"
+        shell: "{{ ansible_env.SHELL | default('/bin/bash') }}"
       when:
         - ansible_env.UID is defined
