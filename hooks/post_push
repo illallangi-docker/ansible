@@ -7,6 +7,9 @@ docker push $DOCKER_REPO:$SOURCE_COMMIT
 # illallangi-docker/bitcoin
 curl -X POST https://cloud.docker.com/api/build/v1/source/05296a73-d602-4b79-92fc-1476998908c6/trigger/e5ee9a03-9d4e-4873-9050-591d81be159e/call/
 
+# illallangi-docker/deluge
+curl -X POST https://cloud.docker.com/api/build/v1/source/e70b9fe8-5e07-42e4-aa60-1e10e27a0bbf/trigger/0ffdce5f-dd00-45d5-9ac3-a7ae89249144/call/
+
 # illallangi-docker/rtorrent
 curl -X POST https://cloud.docker.com/api/build/v1/source/649d4542-6504-477e-af27-bb32feba1862/trigger/986dd806-b84d-4452-9055-abbfad7a0e76/call/
 
